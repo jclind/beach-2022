@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+$primary-background: #181c22;
+$secondary-background: #1c2027;
+$tertiary-background: #323840;
+$background-4: #494f58;
+
+$primary-text: #eeeeee;
+$secondary-text: #a6a6a6;
+$tertiary-text: #555555;
+
+$unfilled-tile-color: #bebebe;
+$correct-guess-color: #28a745;
+$in-guess-color: #f0ad4e;
+$not-in-guess-text: #eeeeee;
+$not-in-guess: #777777;
+$guessed-text-color: #eeeeee;
+$keyboard-color: #bebebe;
+
+$theme-toggle-background: #eeeeee;
+$theme-toggle-border: #c7c7c7;
+
+$white: rgb(255, 255, 255);
+$gray-50: #fafafa;
+$gray-200: #eeeeee;
+$gray-300: #e6e6e6;
+$gray-400: #d6d6d6;
+$gray-500: #bebebe;
+$gray-600: #a6a6a6;
+
+$success-green: #28a745;
+$error-red: #dc3545;
+$error-red-hover: #b02a37;
+
+$alert-error-red: #f8d7da;
+$alert-error-red-border: #f5c6cb;
+$alert-error-red-text: #721c24;
+
+$alert-success-green: #d4edda;
+$alert-success-green-border: #c3e6cb;
+$alert-success-green-text: #155724;
+
+// Navbar
+$nav-height: toRem(100);
+
+$footer-height: toRem(150);
+$footer-margin: 4rem;
+
+$page-top-padding: calc(#{$nav-height} + 2rem);
+
+$recipe-page-max-width: 1000px;
+$recipe-body-max-width: 800px;
+
+$home-hero-height: calc(500px - #{$page-top-padding});
+
+$border-radius: 10px;
+
+$max-width: 1400px;
+
+$font-family: 'Montserrat', sans-serif;
+
+* {
+  font-family: $font-family;
+  letter-spacing: 0.05em;
+}
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+html,
+body,
+.app {
+  height: 100% !important;
+  width: 100%;
+  overflow: hidden;
+}
+button {
+  height: fit-content;
+  width: fit-content;
+}
+.app {
+  background: $primary-background;
+}
+
+.selection-container {
+  .song-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+
+    .song-item {
+      position: relative;
+      height: 200px !important;
+      width: 200px !important;
+      background: $tertiary-background;
+      border-radius: $border-radius;
+      padding: 1rem;
+      border: 1px solid $primary-text;
+      cursor: pointer;
+      &:focus {
+        outline-color: #4d90fe;
+        border: 1px solid none;
+        // outline-offset: -2px;
+        // outline-style: auto;
+        // outline-width: 5px;
+      }
+
+      .icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        height: 18px;
+        width: 18px;
+        color: $secondary-text;
+
+        &:hover {
+          color: $primary-text;
+        }
+      }
+
+      .title {
+        margin: 0 auto;
+        text-transform: uppercase;
+        text-align: center;
+        color: $primary-text;
+        font-weight: 500;
+      }
+      .text {
+        color: $secondary-text;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// Modal Styles
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  margin: 0;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 2rem;
+  font-size: toRem(16);
+  font-weight: 600;
+  background: $tertiary-background;
+  border-radius: $border-radius;
+  .title {
+    font-size: 1.1rem;
+    color: $primary-text;
+    margin: 0;
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+  }
+}
