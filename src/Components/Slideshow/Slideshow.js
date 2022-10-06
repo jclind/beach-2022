@@ -58,12 +58,14 @@ const Slideshow = () => {
     setSongList(songList)
 
     window.addEventListener('keydown', handleKeyPress)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     console.log(songList)
     if (songList.length > 0) {
       console.log(songList[songIndex].lyrics[lyricIndex])
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [songList])
   return (
     <div className='slideshow-page page'>

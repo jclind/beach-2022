@@ -19,8 +19,6 @@ const LyricsInputModal = ({ onClose, addSong }) => {
     if (newValue.length <= 0) {
       setFormattedText([])
     } else {
-      const paragraphs = newValue.split('\n\n')
-      const sentences = []
       setFormattedText(
         newValue.split('\n\n').map(el => {
           return el.split('\n')
